@@ -22,6 +22,7 @@ export class AccountComponent {
     name: 'Checking account',
     balance: 200
   }]
+  accountsToShow: Account[] = this.accounts
 
   withdraw(account: Account, amount: number) {
     account.balance -= amount;
