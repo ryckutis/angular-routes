@@ -1,8 +1,8 @@
 @for(account of accountsToShow; track account.name){
-  <h2>{{ account.name }} </h2>
-  <app-balance
-    [balance]="account.balance"
-    (withdraw)="withdraw(account, $event)"
-    (deposit)="deposit(account, $event)"
-  ></app-balance>
+<h2>{{ account.name }}</h2>
+<app-balance
+  [balance]="account.balance"
+  (withdraw)="withdraw(account, $event)"
+  (deposit)="deposit(account, $event)"
+></app-balance>
 }
