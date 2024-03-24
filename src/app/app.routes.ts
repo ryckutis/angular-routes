@@ -5,6 +5,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AccountComponent } from './account/account.component';
 import { filterAccessToAccountGuard } from './guards/filter-access-to-account.guard';
 import { AccountListComponent } from './account-list/account-list.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 export const routes: Routes = [
   { path: 'accounts', component: AccountListComponent },
@@ -14,8 +16,16 @@ export const routes: Routes = [
     component: AccountComponent,
     // canActivate: [filterAccessToAccountGuard],
   },
-  { path: '', component: AccountComponent },
+  { path: '', component: AccountListComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: 'faq', component: FaqComponent },
+  {
+    path: 'user-zone',
+    children: [
+      { path: '', redirectTo: 'register', pathMatch: 'full' },
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent },
+    ],
+  },
   { path: '**', component: PageNotFoundComponent },
 ];
