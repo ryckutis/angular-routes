@@ -24,6 +24,7 @@ export class AccountComponent {
       name: 'Checking account',
       balance: 200,
     },
+    { name: 'Debt account', balance: -50 },
   ];
 
   accountsToShow: Account[] = this.accounts;
