@@ -4,7 +4,19 @@
   </div>
   <nav>
     <ul>
-      <li class="group">Choose account</li>
+      <li>
+        <input
+          (change)="onInputChange($event)"
+          style="padding: 3px; margin: 3px"
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Enter account name..."
+        />
+      </li>
+      <li class="group">
+        <a routerLink="accounts" routerLinkActive="active">My accounts</a>
+      </li>
       <li>
         <a routerLink="account/1">Savings account</a>
       </li>
@@ -13,10 +25,10 @@
       </li>
       <li class="group">Main pages</li>
       <li>
-        <a [routerLink]="['/faq']" routerLinkActive="active">FAQ</a>
+        <a routerLink="/faq" routerLinkActive="active">FAQ</a>
       </li>
       <li>
-        <a [routerLink]="['/contacts']" routerLinkActive="active">Contacts</a>
+        <a routerLink="/contacts" routerLinkActive="active">Contacts</a>
       </li>
     </ul>
   </nav>

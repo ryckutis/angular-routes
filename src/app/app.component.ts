@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { AccountComponent } from './account/account.component';
+import path from 'path';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +11,10 @@ import { AccountComponent } from './account/account.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'my-account-app';
+  constructor(private router: Router) {}
+
+  onInputChange($event: any) {
+    const searchQuery = $event.target.value;
+    this.router.navigate(['id', searchQuery]);
+  }
 }

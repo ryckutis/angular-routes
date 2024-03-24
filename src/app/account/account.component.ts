@@ -25,6 +25,7 @@ export class AccountComponent {
       balance: 200,
     },
   ];
+
   accountsToShow: Account[] = this.accounts;
 
   constructor(private activatedRoute: ActivatedRoute) {
